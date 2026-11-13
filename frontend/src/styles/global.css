@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global base styles ────────────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-slate-800 antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+}
+
+/* ── Reusable component classes ────────────────────────────────────────────── */
+
+@layer components {
+
+  /* Primary action button */
+  .btn-primary {
+    @apply bg-primary-700 hover:bg-primary-800 text-white font-semibold
+           px-6 py-2.5 rounded-lg transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Secondary / outline button */
+  .btn-secondary {
+    @apply border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50
+           text-slate-700 font-semibold px-6 py-2.5 rounded-lg transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2;
+  }
+
+  /* Danger button (cancellation) */
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold
+           px-6 py-2.5 rounded-lg transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Standard form input */
+  .input-field {
+    @apply w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-800
+           placeholder-slate-400 bg-white
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+           transition-colors duration-150;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden;
+  }
+
+  /* Status badge — CONFIRMED */
+  .badge-confirmed {
+    @apply inline-flex items-center gap-1 bg-green-100 text-green-700
+           text-xs font-semibold px-2.5 py-1 rounded-full;
+  }
+
+  /* Status badge — CANCELLED */
+  .badge-cancelled {
+    @apply inline-flex items-center gap-1 bg-red-100 text-red-700
+           text-xs font-semibold px-2.5 py-1 rounded-full;
+  }
+}
+

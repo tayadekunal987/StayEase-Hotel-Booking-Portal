@@ -1,0 +1,16 @@
+package com.stayease;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * Entry point for the StayEase Hotel Booking Portal backend.
+ */
+@SpringBootApplication
+public class StayEaseApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(StayEaseApplication.class, args);
+    }
+}
+
